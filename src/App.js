@@ -14,17 +14,17 @@ function Tilt(props) {
 
 
 function App() {
-  const [flyoutToggled, toggleFlyout] = useState(false);
+  const [flyout, toggleFlyout] = useState(false);
 
   const options = {
     max: 10,
-    speed: 300,
+    scale: 1.05,
     glare: true,
     "max-glare": 0.33,
   }
 
   return (
-    <Tilt className={`${flyoutToggled ? "card-shape flyout" : "card-shape"}`} onClick={() => toggleFlyout(true)} options={options}>
+    <Tilt className={`${flyout ? "card-shape flyout" : "card-shape"}`} onClick={() => toggleFlyout((current) => !current)} options={options}>
       <img className="card-image" src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/137bbbfdf66395b40d543a9ec56d3c8a.jpg"></img>
       <div className="card-text">
         <div className="title">Solasta: Crown of the Magister</div>
