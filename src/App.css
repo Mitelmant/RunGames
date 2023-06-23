@@ -1,13 +1,23 @@
 body {
+  height: 100vh;
+  width: 100vw;
   background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-shape {
   height: 250px;
   width: 250px;
   border-radius: 10px;
+  position: absolute;
+  top: 12.5%;
+  left: 12.5%;
+  border: 1px solid white;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 0 10px 1px gray;
 }
 
 .card-image {
@@ -26,6 +36,7 @@ body {
   justify-content: space-between;
   color: white;
   padding: 5px;
+  /* container-type: inline-size; */
 }
 
 .title {
@@ -33,6 +44,23 @@ body {
   font-variant-caps: small-caps;
   padding: 0 5px 0 5px;
 }
+
+/* @container (width <= 250px) {
+  .info {
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 5px 0 5px;
+  }
+} */
+
+/* @container (width > 250px) {
+  .info {
+    font-size: 1rem;
+    padding: 0 5px 0 5px;
+  }
+} */
 
 .info {
   font-size: 1rem;
@@ -46,4 +74,15 @@ body {
   font-size: calc(1rem * 5 / 4);
   color: white;
   padding: 0 0 5px 0;
+}
+
+.flyout {
+  animation: flyout-animation calc(1s * 2 / 3) linear;
+  animation-fill-mode: forwards;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+@keyframes flyout-animation {
+	from {transform: scale(1) translateX(12.5%) translateY(12.5%) rotateY(0deg);}
+	to {transform: scale(2) translateX(50%) translateY(50%) rotateY(calc(180deg * 6));}
 }
