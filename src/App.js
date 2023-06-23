@@ -14,36 +14,19 @@ function Tilt(props) {
 
 function App() {
   const options = {
-    reverse:                false,
-    max:                    10,
-    startX:                 0,
-    startY:                 0,
-    perspective:            1000,
-    scale:                  1,
-    speed:                  300,
-    transition:             true,
-    axis:                   null,
-    reset:                  true,
-    "reset-to-start":       true,
-    easing:                 "cubic-bezier(.03,.98,.52,.99)",
-    glare:                  true,
-    "max-glare":            0.33,
-    "glare-prerender":      false,
-    "mouse-event-element":  null,
-    gyroscope:              true,
-    gyroscopeMinAngleX:     -45,
-    gyroscopeMaxAngleX:     45,
-    gyroscopeMinAngleY:     -45,
-    gyroscopeMaxAngleY:     45,
+    max: 10,
+    speed: 300,
+    glare: true,
+    "max-glare": 0.33,
   }
 
   return (
     <Tilt className="card-shape" options={options}>
-      <img className="card-image" src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/d823e0070b5f6e85f55bb68739e879f0.jpg"></img>
+      <img className="card-image" src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/137bbbfdf66395b40d543a9ec56d3c8a.jpg"></img>
       <div className="card-text">
-        <div className="title">Diablo 4</div>
-        <div className="info">Blah blah blah</div>
-        <div className="launch">Launch</div>
+        <div className="title">Solasta: Crown of the Magister</div>
+        <div className="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suspendisse in est ante in nibh mauris cursus. Nulla facilisi cras fermentum odio eu. Diam quam nulla porttitor massa. Est velit egestas dui id ornare arcu odio ut sem.</div>
+        <a className="launch" href="https://youtu.be/p7YXXieghto" target="_blank">Launch</a>
       </div>
     </Tilt>
   );

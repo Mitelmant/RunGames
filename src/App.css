@@ -1,11 +1,17 @@
+body {
+  background-color: black;
+}
+
 .card-shape {
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
 }
 
 .card-image {
+  object-fit: cover;
   height: 50%;
   border-radius: 10px 10px 0 0;
 }
@@ -23,15 +29,21 @@
 }
 
 .title {
-  font-size: larger;
+  font-size: calc(1rem * 4 / 3);
   font-variant-caps: small-caps;
+  padding: 0 5px 0 5px;
 }
 
 .info {
-  font-size: smaller;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 5px 0 5px;
 }
 
 .launch {
-  font-size: medium;
-  text-decoration: underline;
+  font-size: calc(1rem * 5 / 4);
+  color: white;
+  padding: 0 0 5px 0;
 }
