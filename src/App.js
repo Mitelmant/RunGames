@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import VanillaTilt from 'vanilla-tilt';
 
 function Tilt(props) {
@@ -12,38 +12,24 @@ function Tilt(props) {
   return <div ref={tilt} {...rest} />
 }
 
+
 function App() {
+  const [flyout, toggleFlyout] = useState(false);
+
   const options = {
-    reverse:                false,
-    max:                    10,
-    startX:                 0,
-    startY:                 0,
-    perspective:            1000,
-    scale:                  1,
-    speed:                  300,
-    transition:             true,
-    axis:                   null,
-    reset:                  true,
-    "reset-to-start":       true,
-    easing:                 "cubic-bezier(.03,.98,.52,.99)",
-    glare:                  true,
-    "max-glare":            0.33,
-    "glare-prerender":      false,
-    "mouse-event-element":  null,
-    gyroscope:              true,
-    gyroscopeMinAngleX:     -45,
-    gyroscopeMaxAngleX:     45,
-    gyroscopeMinAngleY:     -45,
-    gyroscopeMaxAngleY:     45,
+    max: 10,
+    scale: 1.05,
+    glare: true,
+    "max-glare": 0.33,
   }
 
   return (
-    <Tilt className="card-shape" options={options}>
-      <img className="card-image" src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/d823e0070b5f6e85f55bb68739e879f0.jpg"></img>
+    <Tilt className={`${flyout ? "card-shape flyout" : "card-shape"}`} onClick={() => toggleFlyout((current) => !current)} options={options}>
+      <img className="card-image" src="https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/137bbbfdf66395b40d543a9ec56d3c8a.jpg"></img>
       <div className="card-text">
-        <div className="title">Diablo 4</div>
-        <div className="info">Blah blah blah</div>
-        <div className="launch">Launch</div>
+        <div className="title">Solasta: Crown of the Magister</div>
+        <div className="info">Roll for initiative, take attacks of opportunity, manage player location and the verticality of the battle field in this Turn-Based Tactical RPG based on the SRD 5.1 Ruleset. In Solasta, you make the choices, dice decide your destiny.</div>
+        <a className="launch" href="https://youtu.be/p7YXXieghto" target="_blank">Launch</a>
       </div>
     </Tilt>
   );
